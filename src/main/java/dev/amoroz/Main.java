@@ -6,8 +6,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
-    private static final int[] decimal = {100, 90, 50, 40, 10, 9, 5, 4, 1};
-    private static final String[] roman = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+    private static final int[] DECIMAL = {100, 90, 50, 40, 10, 9, 5, 4, 1};
+    private static final String[] ROMAN = {"C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
 
     public static void main(String[] args) {
         try {
@@ -87,10 +87,10 @@ public class Main {
     private static int getIntFromRoman(String value) {
         int result = 0;
 
-        for (int i = 0; i < decimal.length; i++ ) {
-            while (value.indexOf(roman[i]) == 0) {
-                result += decimal[i];
-                value = value.substring(roman[i].length());
+        for (int i = 0; i < DECIMAL.length; i++ ) {
+            while (value.indexOf(ROMAN[i]) == 0) {
+                result += DECIMAL[i];
+                value = value.substring(ROMAN[i].length());
             }
         }
 
@@ -100,10 +100,10 @@ public class Main {
     private static String getRomanFromInt(int num) {
         StringBuilder result = new StringBuilder();
 
-        for(int i = 0; i < decimal.length; i++) {
-            while(num >= decimal[i]) {
-                num = num - decimal[i];
-                result.append(roman[i]);
+        for(int i = 0; i < DECIMAL.length; i++) {
+            while(num >= DECIMAL[i]) {
+                num = num - DECIMAL[i];
+                result.append(DECIMAL[i]);
             }
         }
 
